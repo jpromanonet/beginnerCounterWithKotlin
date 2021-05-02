@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.SeekBar
 
 class MainActivity : AppCompatActivity() {
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
                 textView_progress.text = progress.toString()
 
                 // Progress bar animation
-                val translationDistance = (initialTextViewTranslationY + progress * animstep)
+                val translationDistance = (initialTextViewTranslationY + progress * animstep * -1)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
