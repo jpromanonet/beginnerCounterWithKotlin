@@ -17,7 +17,10 @@ class MainActivity : AppCompatActivity() {
                 textView_progress.text = progress.toString()
 
                 // Progress bar animation
-                val translationDistance = (initialTextViewTranslationY + progress * animstep * -1)
+                val translationDistance = (initialTextViewTranslationY +
+                        progress * resources.getDimension(R.dimen.text_anim_step) * -1)
+
+                textView_progress.animate()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
