@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
                         progress * resources.getDimension(R.dimen.text_anim_step) * -1)
 
                 textView_progress.animate().translationY(translationDistance)
+
+                // The reset button!
+                if(!fromUser)
+                textView_progress.animate().setDuration(500).rotationBy(360f)
+                        .translationY(initialTextViewTranslationY)
+
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -34,11 +40,9 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        // The reset button!
-        button_reset.setOnClickListener{ v ->
+        // The reset button
+        button_reset.setOnClickListener { v ->
             seekBar.progress = 0
-            textView_progress.animate().setDuration(500).rotationBy(360f)
-                .translationY(initialTextViewTranslationY)
         }
     }
 }
