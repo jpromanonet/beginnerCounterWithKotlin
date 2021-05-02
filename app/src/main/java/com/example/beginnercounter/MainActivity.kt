@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 val translationDistance = (initialTextViewTranslationY +
                         progress * resources.getDimension(R.dimen.text_anim_step) * -1)
 
-                textView_progress.animate()
+                textView_progress.animate().translationY(translationDistance)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -32,5 +32,11 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        // The reset button!
+        button_reset.setOnClickListener{ v ->
+            seekBar.progress = 0
+            textView_progress.animate().setDuration(500)
+        }
     }
 }
