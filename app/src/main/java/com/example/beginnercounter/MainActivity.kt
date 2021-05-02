@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
 
         seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                textView_progress.text = progress.toString()
 
+                // Progress bar animation
+                val translationDistance = (initialTextViewTranslationY + progress * animstep)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -21,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                
+
             }
 
         })
