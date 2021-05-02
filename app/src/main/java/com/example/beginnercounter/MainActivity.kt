@@ -3,6 +3,7 @@ package com.example.beginnercounter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +37,8 @@ class MainActivity : AppCompatActivity() {
         // The reset button!
         button_reset.setOnClickListener{ v ->
             seekBar.progress = 0
-            textView_progress.animate().setDuration(500)
+            textView_progress.animate().setDuration(500).rotationBy(360f)
+                .translationY(initialTextViewTranslationY)
         }
     }
 }
